@@ -31,7 +31,7 @@ namespace CourseWork.Model
         // NOT REQUIRED
         [Display(Name = "Пацієнт")]
         [ForeignKey("Patient")]
-        public Guid PatientId { get; set; }
+        public Guid? PatientId { get; set; }
         public virtual Patient Patient { get; set; }
 
         [Required]
