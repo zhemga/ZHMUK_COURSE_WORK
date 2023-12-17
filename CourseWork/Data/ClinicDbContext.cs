@@ -1,4 +1,5 @@
 ﻿using CourseWork.Model;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 
 namespace CourseWork.Data

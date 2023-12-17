@@ -93,23 +93,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClinicDbContextDataModel\ClinicDbContextUnitOfWork.cs" />
-    <Compile Include="ClinicDbContextDataModel\IClinicDbContextUnitOfWork.cs" />
-    <Compile Include="ClinicDbContextDataModel\UnitOfWorkSource.cs" />
-    <Compile Include="Common\CollectionViewModel.cs" />
-    <Compile Include="Common\EntitiesViewModel.cs" />
-    <Compile Include="Common\ReadOnlyCollectionViewModel.cs" />
-    <Compile Include="Common\SingleObjectViewModel.cs" />
+    <Compile Include="Annotations\Validation\StartTimeLessThanEndTimeAttribute ForScheduleOfficeHour.cs" />
     <Compile Include="Data\ClinicDbContext.cs" />
     <Compile Include="Data\ClinicDbContextInitializer.cs" />
     <Compile Include="Enum\DayOfWeek.cs" />
-    <Compile Include="MainView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainView.Designer.cs">
-      <DependentUpon>MainView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainViewModel.cs" />
     <Compile Include="Model\Doctor\DoctorDegree.cs" />
     <Compile Include="Model\Doctor\Doctor.cs" />
     <Compile Include="Model\Schedule\ScheduleOfficeHourStatus.cs" />
@@ -118,106 +105,6 @@
     <Compile Include="Model\Schedule\ScheduleOfficeHour.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ClinicDbContextViewModel.cs" />
-    <Compile Include="ViewModels\DoctorDegree\DoctorDegreeCollectionViewModel.cs" />
-    <Compile Include="ViewModels\DoctorDegree\DoctorDegreeViewModel.cs" />
-    <Compile Include="ViewModels\DoctorProfile\DoctorProfileCollectionViewModel.cs" />
-    <Compile Include="ViewModels\DoctorProfile\DoctorProfileViewModel.cs" />
-    <Compile Include="ViewModels\Doctor\DoctorCollectionViewModel.cs" />
-    <Compile Include="ViewModels\Doctor\DoctorViewModel.cs" />
-    <Compile Include="ViewModels\Patient\PatientCollectionViewModel.cs" />
-    <Compile Include="ViewModels\Patient\PatientViewModel.cs" />
-    <Compile Include="ViewModels\ScheduleOfficeHourStatus\ScheduleOfficeHourStatusCollectionViewModel.cs" />
-    <Compile Include="ViewModels\ScheduleOfficeHourStatus\ScheduleOfficeHourStatusViewModel.cs" />
-    <Compile Include="ViewModels\ScheduleOfficeHour\ScheduleOfficeHourCollectionViewModel.cs" />
-    <Compile Include="ViewModels\ScheduleOfficeHour\ScheduleOfficeHourViewModel.cs" />
-    <Compile Include="Views\ClinicDbContextView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ClinicDbContextView.designer.cs">
-      <DependentUpon>ClinicDbContextView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DoctorDegree\DoctorDegreeCollectionView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\DoctorDegree\DoctorDegreeCollectionView.designer.cs">
-      <DependentUpon>DoctorDegreeCollectionView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DoctorDegree\DoctorDegreeView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\DoctorDegree\DoctorDegreeView.designer.cs">
-      <DependentUpon>DoctorDegreeView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DoctorProfile\DoctorProfileCollectionView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\DoctorProfile\DoctorProfileCollectionView.designer.cs">
-      <DependentUpon>DoctorProfileCollectionView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DoctorProfile\DoctorProfileView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\DoctorProfile\DoctorProfileView.designer.cs">
-      <DependentUpon>DoctorProfileView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Doctor\DoctorCollectionView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Doctor\DoctorCollectionView.designer.cs">
-      <DependentUpon>DoctorCollectionView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Doctor\DoctorView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Doctor\DoctorView.designer.cs">
-      <DependentUpon>DoctorView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Patient\PatientCollectionView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Patient\PatientCollectionView.designer.cs">
-      <DependentUpon>PatientCollectionView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Patient\PatientView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Patient\PatientView.designer.cs">
-      <DependentUpon>PatientView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ScheduleOfficeHourStatus\ScheduleOfficeHourStatusCollectionView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ScheduleOfficeHourStatus\ScheduleOfficeHourStatusCollectionView.designer.cs">
-      <DependentUpon>ScheduleOfficeHourStatusCollectionView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ScheduleOfficeHourStatus\ScheduleOfficeHourStatusView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ScheduleOfficeHourStatus\ScheduleOfficeHourStatusView.designer.cs">
-      <DependentUpon>ScheduleOfficeHourStatusView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ScheduleOfficeHour\ScheduleOfficeHourCollectionView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ScheduleOfficeHour\ScheduleOfficeHourCollectionView.designer.cs">
-      <DependentUpon>ScheduleOfficeHourCollectionView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ScheduleOfficeHour\ScheduleOfficeHourView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ScheduleOfficeHour\ScheduleOfficeHourView.designer.cs">
-      <DependentUpon>ScheduleOfficeHourView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Tasks\ScheduleAttendanceReportView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Tasks\ScheduleAttendanceReportView.Designer.cs">
-      <DependentUpon>ScheduleAttendanceReportView.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="MainView.resx">
-      <DependentUpon>MainView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -228,15 +115,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\ClinicDbContextView.resx">
-      <DependentUpon>ClinicDbContextView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Doctor\DoctorView.resx">
-      <DependentUpon>DoctorView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Tasks\ScheduleAttendanceReportView.resx">
-      <DependentUpon>ScheduleAttendanceReportView.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

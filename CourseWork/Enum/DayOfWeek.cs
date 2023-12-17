@@ -1,13 +1,15 @@
-﻿namespace CourseWork.Enum
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CourseWork.Enum
 {
     public enum DayOfWeek
     {
-        Sunday,
-        Monday,
+        Monday = 1,
         Tuesday,
         Wednesday,
         Thursday,
         Friday,
-        Saturday
+        Saturday,
+        Sunday
     }
 }

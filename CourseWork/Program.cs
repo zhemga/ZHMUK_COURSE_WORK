@@ -1,6 +1,5 @@
-﻿using CourseWork.Data;
+﻿using CourseWork.Views.ClinicDbContextView;
 using System;
-using System.Data.Entity;
 using System.Windows.Forms;
 
 namespace CourseWork
@@ -15,7 +14,7 @@ namespace CourseWork
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainView());
+            Application.Run(new ClinicDbContextView());
         }
     }
 }
