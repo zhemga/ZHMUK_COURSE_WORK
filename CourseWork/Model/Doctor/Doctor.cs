@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace CourseWork.Model
 {
@@ -27,13 +28,13 @@ namespace CourseWork.Model
         [Required]
         [Display(Name = "Профіль")]
         [ForeignKey("DoctorProfile")]
-        public Guid DoctorProfileId { get; set; }
+        public string DoctorProfileName { get; set; }
         public virtual DoctorProfile DoctorProfile { get; set; }
 
         [Required]
         [Display(Name = "Звання")]
         [ForeignKey("DoctorDegree")]
-        public Guid DoctorDegreeId { get; set; }
+        public string DoctorDegreeName { get; set; }
         public virtual DoctorDegree DoctorDegree { get; set; }
 
         public virtual ICollection<ScheduleOfficeHour> ScheduleOfficeHours { get; set; }
@@ -43,6 +44,16 @@ namespace CourseWork.Model
         public string FullName
         {
             get { return (Surname + " " + Name); }
+        }
+
+        [NotMapped]
+        [Display(Name = "Популярність")]
+        public int Popularity
+        {
+            get 
+            {
+                return ScheduleOfficeHours.Where((soh) => { return soh.Patient != null; }).ToList().Count;
+            }
         }
     }
 }

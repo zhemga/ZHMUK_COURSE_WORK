@@ -10,10 +10,6 @@ namespace CourseWork.Model
     {
         [Key]
         [Required]
-        [Display(Name = "Ідентифікатор")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
-        [Required]
         [Display(Name = "Ступінь")]
         public string Name { get; set; }
 

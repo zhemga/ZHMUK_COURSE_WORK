@@ -18,8 +18,8 @@ namespace CourseWork.Model
         public string Description { get; set; }
         [Required]
         [Display(Name = "День Тижня")]
-        [Range(1, 7)]
-        [EnumDataType(typeof(DayOfWeek))]
+        [EnumDataType(typeof(CourseWork.Enum.DayOfWeek))]
+        [Range(1, 8)]
         public int DayOfWeekNumber { get; set; }
 
         [Required]
@@ -28,7 +28,7 @@ namespace CourseWork.Model
         public Guid DoctorId { get; set; }
         public virtual Doctor Doctor { get; set; }
 
-        [Required]
+        // NOT REQUIRED
         [Display(Name = "Пацієнт")]
         [ForeignKey("Patient")]
         public Guid PatientId { get; set; }
@@ -36,15 +36,17 @@ namespace CourseWork.Model
 
         [Required]
         [Display(Name = "Початок Прийому")]
+        [DisplayFormat(DataFormatString = "t")]
         public DateTime StartTime { get; set; }
         [Required]
+        [DisplayFormat(DataFormatString = "t")]
         [Display(Name = "Кінець Прийому")]
         public DateTime EndTime { get; set; }
 
         [Required]
         [Display(Name = "Статус Прийому")]
         [ForeignKey("ScheduleOfficeHourStatus")]
-        public string ScheduleOfficeHourStatusStatusId { get; set; }
+        public string ScheduleOfficeHourStatusStatusName { get; set; }
         public virtual ScheduleOfficeHourStatus ScheduleOfficeHourStatus { get; set; }
     }
 }

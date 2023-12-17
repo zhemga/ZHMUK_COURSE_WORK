@@ -1,6 +1,6 @@
-﻿using CourseWork.Views.ClinicDbContextView;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using CourseWork.Views.ClinicDbContextView;
 
 namespace CourseWork
 {
