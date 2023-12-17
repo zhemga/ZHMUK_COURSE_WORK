@@ -29,6 +29,7 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
+            this.doctorCollectionViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,24 +42,20 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.doctorCollectionViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mvvmContext = new DevExpress.Utils.MVVM.MVVMContext(this.components);
-            this.labelControl = new DevExpress.XtraEditors.LabelControl();
-            this.windowsUIButtonPanel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.itemLabel = new DevExpress.XtraLayout.LayoutControlItem();
-            this.itemGrid = new DevExpress.XtraLayout.LayoutControlItem();
             this.selectMostPopularDoctorButton = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.itemGrid = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.windowsUIButtonPanel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorCollectionViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
@@ -67,14 +64,18 @@
             // 
             this.gridControl.DataSource = this.doctorCollectionViewBindingSource;
             this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.gridControl.Location = new System.Drawing.Point(47, 43);
+            this.gridControl.Location = new System.Drawing.Point(47, 31);
             this.gridControl.MainView = this.gridView;
             this.gridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1101, 828);
+            this.gridControl.Size = new System.Drawing.Size(1101, 840);
             this.gridControl.TabIndex = 2;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
+            // 
+            // doctorCollectionViewBindingSource
+            // 
+            this.doctorCollectionViewBindingSource.DataSource = typeof(CourseWork.Model.Doctor);
             // 
             // gridView
             // 
@@ -196,33 +197,64 @@
             this.gridColumn11.VisibleIndex = 6;
             this.gridColumn11.Width = 87;
             // 
-            // doctorCollectionViewBindingSource
-            // 
-            this.doctorCollectionViewBindingSource.DataSource = typeof(CourseWork.Model.Doctor);
-            // 
             // mvvmContext
             // 
             this.mvvmContext.ContainerControl = this;
             this.mvvmContext.ViewModelType = typeof(CourseWork.ViewModels.DoctorCollectionViewModel);
             // 
-            // labelControl
+            // layoutControl
             // 
-            this.labelControl.AllowHtmlString = true;
-            this.labelControl.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelControl.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.labelControl.Appearance.Options.UseFont = true;
-            this.labelControl.Appearance.Options.UseForeColor = true;
-            this.labelControl.Appearance.Options.UseTextOptions = true;
-            this.labelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.labelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl.Location = new System.Drawing.Point(47, 0);
-            this.labelControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl.Name = "labelControl";
-            this.labelControl.Padding = new System.Windows.Forms.Padding(0, 4, 15, 7);
-            this.labelControl.Size = new System.Drawing.Size(873, 43);
-            this.labelControl.StyleController = this.layoutControl;
-            this.labelControl.TabIndex = 4;
-            this.labelControl.Text = "Лікарі";
+            this.layoutControl.AllowCustomization = false;
+            this.layoutControl.Controls.Add(this.selectMostPopularDoctorButton);
+            this.layoutControl.Controls.Add(this.gridControl);
+            this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.layoutControl.Name = "layoutControl";
+            this.layoutControl.Root = this.layoutControlGroup;
+            this.layoutControl.Size = new System.Drawing.Size(1195, 871);
+            this.layoutControl.TabIndex = 0;
+            // 
+            // selectMostPopularDoctorButton
+            // 
+            this.selectMostPopularDoctorButton.Location = new System.Drawing.Point(49, 2);
+            this.selectMostPopularDoctorButton.Name = "selectMostPopularDoctorButton";
+            this.selectMostPopularDoctorButton.Size = new System.Drawing.Size(1097, 27);
+            this.selectMostPopularDoctorButton.StyleController = this.layoutControl;
+            this.selectMostPopularDoctorButton.TabIndex = 5;
+            this.selectMostPopularDoctorButton.Text = "Визначити Найпопулярнішого Лікаря";
+            this.selectMostPopularDoctorButton.Click += new System.EventHandler(this.selectMostPopularDoctorButton_Click);
+            // 
+            // layoutControlGroup
+            // 
+            this.layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup.GroupBordersVisible = false;
+            this.layoutControlGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.itemGrid,
+            this.layoutControlItem1});
+            this.layoutControlGroup.Name = "layoutControlGroup";
+            this.layoutControlGroup.Padding = new DevExpress.XtraLayout.Utils.Padding(47, 47, 0, 0);
+            this.layoutControlGroup.Size = new System.Drawing.Size(1195, 871);
+            this.layoutControlGroup.TextVisible = false;
+            // 
+            // itemGrid
+            // 
+            this.itemGrid.Control = this.gridControl;
+            this.itemGrid.Location = new System.Drawing.Point(0, 31);
+            this.itemGrid.Name = "itemGrid";
+            this.itemGrid.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.itemGrid.Size = new System.Drawing.Size(1101, 840);
+            this.itemGrid.TextSize = new System.Drawing.Size(0, 0);
+            this.itemGrid.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.selectMostPopularDoctorButton;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(1101, 31);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // windowsUIButtonPanel
             // 
@@ -247,12 +279,12 @@
             windowsUIButtonImageOptions4.ImageUri.Uri = "Refresh;Size32x32;GrayScaled";
             windowsUIButtonImageOptions5.ImageUri.Uri = "Preview;Size32x32;GrayScaled";
             this.windowsUIButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("New", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Edit", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Refresh", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Створити", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Редагувати", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Видалити", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Оновити", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Print", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Друкувати", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel.EnableImageTransparency = true;
             this.windowsUIButtonPanel.ForeColor = System.Drawing.Color.White;
@@ -266,72 +298,6 @@
             this.windowsUIButtonPanel.Text = "windowsUIButtonPanel";
             this.windowsUIButtonPanel.UseButtonBackgroundImages = false;
             // 
-            // layoutControl
-            // 
-            this.layoutControl.AllowCustomization = false;
-            this.layoutControl.Controls.Add(this.selectMostPopularDoctorButton);
-            this.layoutControl.Controls.Add(this.labelControl);
-            this.layoutControl.Controls.Add(this.gridControl);
-            this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.layoutControl.Name = "layoutControl";
-            this.layoutControl.Root = this.layoutControlGroup;
-            this.layoutControl.Size = new System.Drawing.Size(1195, 871);
-            this.layoutControl.TabIndex = 0;
-            // 
-            // layoutControlGroup
-            // 
-            this.layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup.GroupBordersVisible = false;
-            this.layoutControlGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.itemLabel,
-            this.itemGrid,
-            this.layoutControlItem1});
-            this.layoutControlGroup.Name = "layoutControlGroup";
-            this.layoutControlGroup.Padding = new DevExpress.XtraLayout.Utils.Padding(47, 47, 0, 0);
-            this.layoutControlGroup.Size = new System.Drawing.Size(1195, 871);
-            this.layoutControlGroup.TextVisible = false;
-            // 
-            // itemLabel
-            // 
-            this.itemLabel.Control = this.labelControl;
-            this.itemLabel.Location = new System.Drawing.Point(0, 0);
-            this.itemLabel.Name = "itemLabel";
-            this.itemLabel.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.itemLabel.Size = new System.Drawing.Size(873, 43);
-            this.itemLabel.TextSize = new System.Drawing.Size(0, 0);
-            this.itemLabel.TextVisible = false;
-            // 
-            // itemGrid
-            // 
-            this.itemGrid.Control = this.gridControl;
-            this.itemGrid.Location = new System.Drawing.Point(0, 43);
-            this.itemGrid.Name = "itemGrid";
-            this.itemGrid.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.itemGrid.Size = new System.Drawing.Size(1101, 828);
-            this.itemGrid.TextSize = new System.Drawing.Size(0, 0);
-            this.itemGrid.TextVisible = false;
-            // 
-            // selectMostPopularDoctorButton
-            // 
-            this.selectMostPopularDoctorButton.Location = new System.Drawing.Point(922, 2);
-            this.selectMostPopularDoctorButton.Name = "selectMostPopularDoctorButton";
-            this.selectMostPopularDoctorButton.Size = new System.Drawing.Size(224, 27);
-            this.selectMostPopularDoctorButton.StyleController = this.layoutControl;
-            this.selectMostPopularDoctorButton.TabIndex = 5;
-            this.selectMostPopularDoctorButton.Text = "Визначити Найпопулярнішого Лікаря";
-            this.selectMostPopularDoctorButton.Click += new System.EventHandler(this.selectMostPopularDoctorButton_Click);
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.selectMostPopularDoctorButton;
-            this.layoutControlItem1.Location = new System.Drawing.Point(873, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(228, 43);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
             // DoctorCollectionView
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -344,13 +310,12 @@
             this.Name = "DoctorCollectionView";
             this.Size = new System.Drawing.Size(1195, 945);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorCollectionViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
             this.layoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
@@ -363,11 +328,9 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
 		private DevExpress.Utils.MVVM.MVVMContext mvvmContext;
 		private System.Windows.Forms.BindingSource doctorCollectionViewBindingSource;
-		private	DevExpress.XtraEditors.LabelControl labelControl;
 		private	DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel;
 		private DevExpress.XtraLayout.LayoutControl layoutControl;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup;
-        private DevExpress.XtraLayout.LayoutControlItem itemLabel;
         private DevExpress.XtraLayout.LayoutControlItem itemGrid;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;

@@ -225,8 +225,14 @@
     <EmbeddedResource Include="Views\Doctor\DoctorCollectionView.resx">
       <DependentUpon>DoctorCollectionView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Patient\PatientCollectionView.resx">
+      <DependentUpon>PatientCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ScheduleOfficeHourStatus\ScheduleOfficeHourStatusCollectionView.resx">
       <DependentUpon>ScheduleOfficeHourStatusCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ScheduleOfficeHour\ScheduleOfficeHourCollectionView.resx">
+      <DependentUpon>ScheduleOfficeHourCollectionView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
